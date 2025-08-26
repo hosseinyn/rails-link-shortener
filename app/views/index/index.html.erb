@@ -1,0 +1,33 @@
+<%# Hero section %>
+
+<div class="d-flex flex-row gap-1 align-items-center mt-5 flex-wrap flex-sm-nowrap">
+
+    <div class="d-flex flex-column gap-1 justify-content-center ms-4">
+        <h2>Make your link shorter</h2>
+        <p class="mb-0 w-75">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <div class="d-flex gap-3 mt-3 align-items-center">
+            <a href="/signup"><button class="btn btn-success">Get started</button></a>
+            <a href="#about" class="link-success">More details</a>
+        </div>
+    </div>
+
+    <div style="margin-right : 18px;">
+        <%= image_tag "hero-section.png", alt: "Rails link shortener" , class:"img mt-3" , style:"width: 500px;" %>
+    </div>
+
+</div>
+
+<%# About the project %>
+
+<section class="d-flex flex-column gap-1 align-items-center" style="margin-top: 80px;" id="about">
+    <h3>About the project</h3>
+    <p class="text-center w-75">
+    This project is a purely demonstrative application built with Ruby on Rails that shortens links. The frontend has been fully developed using Ruby on Rails’ built-in templates, and its UI framework is Bootstrap. The project uses SQLite, the default database in Ruby on Rails development, for storing information.
+    By creating a user account, you can generate short links. Your long URLs are replaced with short texts and can be accessed through the generated short link. When a user visits the short link, they are automatically redirected to the original long URL. These records, which are also tied to your user account, are stored in and retrieved from the database.
+    </p>
+
+    <img alt="My Skills" src="https://skillicons.dev/icons?i=html,css,bootstrap,ruby,rails,sqlite">
+
+    <a href="https://github.com/hosseinyn/rails-link-shortener" class="link-success mt-3">Github Repository</a>
+</section>
