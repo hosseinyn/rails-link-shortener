@@ -62,6 +62,39 @@ class UserController < ApplicationController
     redirect_to root_path
   end
 
+  def changepassword
+  end
+
+  def change_password
+    @user = User.find(session[:user_id])
+
+    if @user.authenticate(params[:current_password])
+
+      if params[:new_password] != params[:password_confirmation]
+        flash[:alert] = "Passwords don't match"
+        render :changepassword
+        return
+      end
+
+      @user.password = params[:new_password]
+
+      if @user.save
+        session[:user_id] = nil 
+        flash[:notice] = "Password changed successfully."
+        redirect_to "/login"
+      else
+        flash[:alert] = @user.errors.full_messages.to_sentence
+        render :changepassword
+      end
+
+    else 
+      flash[:alert] = "Current password is not correct."
+      render :changepassword
+
+    end
+
+  end
+
   private
 
   def user_params

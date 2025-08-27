@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   get "logout" , to: "user#logout"
 
   post "delete-account" , to: "user#delete_account"
+
+  get "change-password" , to: "user#changepassword"
+  post "change-password" , to: "user#change_password"
   root "index#index"
 end
