@@ -34,6 +34,16 @@ class UserController < ApplicationController
 
   end
 
+  def dashboard
+    @link = Link.new
+
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @username = @user.username
+    end
+    
+  end
+
   private
 
   def user_params

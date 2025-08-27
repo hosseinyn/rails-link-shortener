@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   get "signup" , to: "user#signup"
   post "signup" , to: "user#register"
+
+  get "dashboard" , to: "user#dashboard"
   root "index#index"
 end
