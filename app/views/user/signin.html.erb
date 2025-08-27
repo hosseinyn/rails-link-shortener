@@ -1,0 +1,16 @@
+<h1 class="mt-5 text-center"> Login </h1>
+
+<%= form_with url: login_path , method: :post, html: { class: "d-flex flex-column align-items-center justify-conent-center gap-2 mt-4" } do |f| %>
+
+  <%= f.label :username , style:"margin-right: 300px;" , class:"mt-1" %>
+  <%= f.text_field :username , placeholder: "Enter username..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+  <%= f.label :password , style:"margin-right: 300px;" , class:"mt-1" %>
+  <%= f.text_field :password , placeholder: "Enter password..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+  <a class="link-success text-decoration-none mt-1 mb-0" href="/signup" style="margin-right: 130px;">Don't have an account? Sign up</a>
+
+   <%= f.submit "Login" , class: "btn btn-success mt-3" , style:"width: 370px; height: 37px;" %>
+<% end %>
+
+<br /><br />
