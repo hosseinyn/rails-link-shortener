@@ -41,7 +41,13 @@ class UserController < ApplicationController
       @user = User.find(session[:user_id])
       @username = @user.username
     end
-    
+
+  end
+
+  def logout
+    session[:user_id] = nil
+
+    redirect_to root_path
   end
 
   private

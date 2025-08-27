@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post "signup" , to: "user#register"
 
   get "dashboard" , to: "user#dashboard"
+  get "logout" , to: "user#logout"
   root "index#index"
 end
