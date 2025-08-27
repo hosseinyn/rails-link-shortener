@@ -50,6 +50,18 @@ class UserController < ApplicationController
     redirect_to root_path
   end
 
+  def delete_account
+    @user = User.find(session[:user_id])
+
+    if !@user 
+      redirect_to root_path
+    end
+
+    @user.destroy 
+
+    redirect_to root_path
+  end
+
   private
 
   def user_params

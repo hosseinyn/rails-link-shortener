@@ -5,7 +5,9 @@
 <div class="d-flex flex-row gap-3 align-items-center justify-content-center mt-4 mb-5">
     <a href="/links/add"><button class="btn btn-success">Create link</button></a>
     <a href="/logout"><button class="btn btn-warning">Logout</button></a>
-    <a href="/delete-account"><button class="btn btn-danger">Delete account</button></a>
+    <%= form_with method: :post , url: delete_account_path do |form| %>
+        <%= form.submit "Delete account" , class: "btn btn-danger" %>
+    <%end%>
 </div>
 
 </div>
