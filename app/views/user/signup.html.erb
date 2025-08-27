@@ -1,0 +1,19 @@
+<h1 class="mt-5 text-center"> Signup </h1>
+
+<%= form_with model: @user , url: signup_path , method: :post, html: { class: "d-flex flex-column align-items-center justify-conent-center gap-2 mt-4" } do |f| %>
+
+  <%= f.label :username , style:"margin-right: 300px;" , class:"mt-1" %>
+  <%= f.text_field :username , placeholder: "Enter username..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+  <%= f.label :password , style:"margin-right: 300px;" , class:"mt-1" %>
+  <%= f.text_field :password , type: :password , placeholder: "Enter password..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+  <%= f.label :password_confirmation , style:"margin-right: 210px;" , class:"mt-1" %>
+  <%= f.text_field :password_confirmation , type: :password, placeholder: "Repeat password..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+  <a class="link-success text-decoration-none mt-1 mb-0" href="/login" style="margin-right: 130px;">Do you have an account? Login</a>
+
+   <%= f.submit "Register" , class: "btn btn-success mt-3" , style:"width: 370px; height: 37px;" %>
+<% end %>
+
+<br /><br />
