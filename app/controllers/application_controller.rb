@@ -16,4 +16,12 @@ class ApplicationController < ActionController::Base
       redirect_to "/login"
     end
   end
+  
+
+  def require_not_login
+    if loged_in
+      redirect_to "/dashboard"
+    end
+  end
+
 end

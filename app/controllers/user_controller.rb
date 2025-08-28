@@ -2,6 +2,8 @@ class UserController < ApplicationController
 
   before_action :require_login , only: [:dashboard , :logout , :delete_account , :changepassword , :change_password]
 
+  before_action :require_not_login , only: [:signin , :login , :signup , :register]
+
   def signin
   end
 
