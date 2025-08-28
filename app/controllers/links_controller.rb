@@ -6,11 +6,20 @@ class LinksController < ApplicationController
   end
 
   def create
-    random_short_link = SecureRandom.alphanumeric(7)
-    @link = Link.new(full_url: params[:full_url] , short_link: random_short_link)
-    if @link.save
-      flash[:notice] = "Link created successfully."
+
+    if params[:full_url].include?("https://") || params[:full_url].include?("http://")
+
+      random_short_link = SecureRandom.alphanumeric(7)
+      @link = Link.new(full_url: params[:full_url] , short_link: random_short_link)
+      if @link.save
+        flash[:notice] = "Link created successfully."
+        redirect_to "/links/add"
+      end
+
+    else
+      flash[:alert] = "Link is not valid."
       redirect_to "/links/add"
+    
     end
 
   end
