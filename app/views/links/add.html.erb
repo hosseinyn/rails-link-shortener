@@ -23,7 +23,7 @@
       <h6 class="text-center"><%= link.full_url %></h6>
 
       <div class="d-flex flex-row gap-1 align-items-center mt-1">
-        <%= form_with do |form| %>
+        <%= form_with url: link_delete_path do |form| %>
 
             <input type="hidden" name="link_id" value=<%= link.id %> />
             <%= form.submit "Delete" , class: "btn btn-danger mt-3" , style:"width: 70px; height: 37px;" %>

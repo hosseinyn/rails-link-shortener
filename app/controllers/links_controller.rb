@@ -42,4 +42,20 @@ class LinksController < ApplicationController
 
   end
 
+  def remove 
+    @link = Link.find(params[:link_id])
+
+    if @link
+      @link.destroy
+
+      flash[:notice] = "Link deleted successfully."
+      redirect_to "/links/add"
+
+    else
+      flash[:alert] = "Link does not exists."
+      redirect_to "/links/add"
+
+    end
+  end
+
 end

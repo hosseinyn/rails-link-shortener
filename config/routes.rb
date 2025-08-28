@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get "link/:short_link" , to: "links#show"
 
+  post "link/delete" , to: "links#remove"
+
   get "login" , to: "user#signin"
   post "login" , to: "user#login"
 
