@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post "link/delete" , to: "links#remove"
 
+  get "created" , to: "links#created"
+
   get "login" , to: "user#signin"
   post "login" , to: "user#login"
 

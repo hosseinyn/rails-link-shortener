@@ -58,4 +58,8 @@ class LinksController < ApplicationController
     end
   end
 
+  def created
+    @links = Link.all
+  end
+
 end
