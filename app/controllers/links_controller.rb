@@ -1,6 +1,9 @@
 require "securerandom"
 
 class LinksController < ApplicationController
+  before_action :require_login , only: [:add , :create , :remove]
+
+
   def add
     @user = User.find(session[:user_id])
     @links = @user.links
