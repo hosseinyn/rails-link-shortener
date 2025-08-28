@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "links/add"
+  get "links/add" , to: "links#add"
+  post "links/add" , to: "links#create"
+
   get "login" , to: "user#signin"
   post "login" , to: "user#login"
 

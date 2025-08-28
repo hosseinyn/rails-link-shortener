@@ -1,2 +1,39 @@
-<h1>Links#add</h1>
-<p>Find me in app/views/links/add.html.erb</p>
+<h1 class="mt-5 text-center"> Create Link </h1>
+
+<%= form_with url: links_add_path , method: :post, html: { class: "d-flex flex-column align-items-center justify-conent-center gap-2 mt-4" } do |f| %>
+
+  <%= f.label :full_url , style:"margin-right: 300px;" , class:"mt-1" %>
+  <%= f.text_field :full_url , required: true , placeholder: "Enter full url..." , class:"border-0 border-bottom border-top border-start ps-2 rounded" , style: "outline: none; width: 370px; height: 37px;" %>
+
+   <%= f.submit "Create" , class: "btn btn-success mt-3" , style:"width: 370px; height: 37px;" %>
+<% end %>
+
+<br />
+
+<h3 class="text-center mt-4">Your links : </h3>
+
+<% if @links.length == 0 %>
+    <h6 class="text-center mt-4">There is not any link. You can create one</h6>
+<% end %>
+
+<div class="d-flex flex-row gap-3 mt-4 ms-3">
+    <% @links.each do |link| %>
+    <div class="d-flex flex-column align-items-center pt-3 rounded" style="height: 150px; width: 170px; border: 1px solid #000;">
+      <h6 class="text-center">full url :</h6>
+      <h6 class="text-center"><%= link.full_url %></h6>
+
+      <div class="d-flex flex-row gap-1 align-items-center mt-1">
+        <%= form_with do |form| %>
+
+            <input type="hidden" name="link_id" value=<%= link.id %> />
+            <%= form.submit "Delete" , class: "btn btn-danger mt-3" , style:"width: 70px; height: 37px;" %>
+
+        <% end %>
+
+        <a href=<%= root_url + "link/" + link.short_link %>><button class="btn btn-success mt-3">Visit</button></a>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br /><br />
