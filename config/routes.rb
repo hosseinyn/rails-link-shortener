@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get "links/add" , to: "links#add"
   post "links/add" , to: "links#create"
 
+  get "link/:short_link" , to: "links#show"
+
   get "login" , to: "user#signin"
   post "login" , to: "user#login"
 

@@ -15,4 +15,22 @@ class LinksController < ApplicationController
 
   end
 
+  def show
+    link_short_link = params[:short_link]
+
+    @link = Link.find_by(short_link: link_short_link)
+
+    if @link
+      link_full_url = @link.full_url
+
+      redirect_to(link_full_url, allow_other_host: true)
+
+    else
+      flash[:alert] = "Link not found."
+      redirect_to root_path
+      
+    end
+
+  end
+
 end
